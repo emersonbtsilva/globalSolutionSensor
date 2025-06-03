@@ -79,21 +79,21 @@ export default function InsertDataScreen() {
     }
   };
 
-  const handleLimparHistorico = () =>
-    Alert.alert('Confirmação', 'Tem certeza que deseja limpar o histórico?', [
-      { text: 'Cancelar', style: 'cancel' },
-      { text: 'Sim', onPress: resetarHistorico },
-    ]);
+  // const handleLimparHistorico = () =>
+  //   Alert.alert('Confirmação', 'Tem certeza que deseja limpar o histórico?', [
+  //     { text: 'Cancelar', style: 'cancel' },
+  //     { text: 'Sim', onPress: resetarHistorico },
+  //   ]);
 
-  const resetarHistorico = async () => {
-    try {
-      await AsyncStorage.removeItem('historicoDadosAmbientais');
-      Alert.alert('Sucesso', 'Histórico limpo com sucesso!');
-    } catch (error) {
-      Alert.alert('Erro', 'Falha ao limpar histórico.');
-      console.error(error);
-    }
-  };
+  // const resetarHistorico = async () => {
+  //   try {
+  //     await AsyncStorage.removeItem('historicoDadosAmbientais');
+  //     Alert.alert('Sucesso', 'Histórico limpo com sucesso!');
+  //   } catch (error) {
+  //     Alert.alert('Erro', 'Falha ao limpar histórico.');
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -165,10 +165,6 @@ export default function InsertDataScreen() {
       {/* BOTÕES */}
       <TouchableOpacity style={styles.button} onPress={salvarDados}>
         <Text style={styles.buttonText}>Salvar Dados</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.clearButton} onPress={handleLimparHistorico}>
-        <Text style={styles.clearButtonText}>Limpar Histórico</Text>
       </TouchableOpacity>
     </ScrollView>
   );
