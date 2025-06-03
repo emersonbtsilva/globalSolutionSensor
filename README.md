@@ -42,6 +42,7 @@ Este projeto foi desenvolvido como parte da disciplina Global Solution na FIAP, 
    ```bash
    git clone https://github.com/emersonbtsilva/globalSolutionSensor.git
    cd globalSolutionSensor
+
 2.** Instale as dependências: **
 
 npm install
