@@ -19,18 +19,20 @@ Este projeto foi desenvolvido como parte da disciplina Global Solution na FIAP, 
 
 ## 📂 Estrutura do Projeto
 
-├── assets/ # Recursos visuais (imagens, ícones)
-├── src/ # Código-fonte principal
-│ ├── screens/ # Telas do aplicativo
-│ │ ├── InsertDataScreen.tsx
-│ │ ├── RiskScreen.tsx
-│ │ └── ...
-│ ├── navigation/ # Configurações de navegação
-│ │ └── StackNavigator.tsx
-│ └── ...
-├── App.tsx # Componente raiz do aplicativo
-├── package.json # Dependências e scripts do projeto
-└── tsconfig.json # Configurações do TypeScript
+```bash
+├── assets/                  # Recursos visuais (imagens, ícones)
+├── src/                     # Código-fonte principal
+│   ├── screens/             # Telas do aplicativo
+│   │   ├── InsertDataScreen.tsx
+│   │   ├── RiskScreen.tsx
+│   │   └── ...              # Outras telas
+│   ├── navigation/          # Configurações de navegação
+│   │   └── StackNavigator.tsx
+│   └── ...                  # Outros diretórios e arquivos auxiliares
+├── App.tsx                  # Componente raiz do aplicativo
+├── package.json             # Dependências e scripts do projeto
+└── tsconfig.json            # Configurações do TypeScript
+
 
 
 ## 🚀 Como Executar o Projeto
