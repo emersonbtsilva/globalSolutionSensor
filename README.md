@@ -32,6 +32,7 @@ Este projeto foi desenvolvido como parte da disciplina Global Solution na FIAP, 
 ├── App.tsx                  # Componente raiz do aplicativo
 ├── package.json             # Dependências e scripts do projeto
 └── tsconfig.json            # Configurações do TypeScript
+```
 
 
 
@@ -43,12 +44,13 @@ Este projeto foi desenvolvido como parte da disciplina Global Solution na FIAP, 
    git clone https://github.com/emersonbtsilva/globalSolutionSensor.git
    cd globalSolutionSensor
 
-2.** Instale as dependências: **
-
-npm install
-
-3. **Execute o aplicativo: **
-
-npx expo start
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+3. **Execute o aplicativo:**
+   ```bash
+   npx expo start
+   ```
 
 
