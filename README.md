@@ -1,3 +1,9 @@
+## Integrantes 
+- Emerson Batista da Silva  RM:96288
+- Leonardo yukio Uliana Seno RM:550648
+- Eduarco Cicero dos Santos RM:551415
+
+
 # 🌱 Global Solution Sensor
 
 Este projeto foi desenvolvido como parte da disciplina Global Solution na FIAP, com o objetivo de monitorar variáveis ambientais críticas que influenciam o risco de deslizamentos de terra. Utilizando sensores de chuva, umidade do solo e inclinação do terreno, o sistema coleta dados em tempo real e fornece avaliações de risco, além de sugerir ações de mitigação para áreas vulneráveis.
