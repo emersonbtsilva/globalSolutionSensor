@@ -1,7 +1,7 @@
 ## Integrantes 
 - Emerson Batista da Silva  RM:96288
 - Leonardo yukio Uliana Seno RM:550648
-- Eduarco Cicero dos Santos RM:551415
+- Eduardo Cicero dos Santos RM:551415
 
 
 # 🌱 Global Solution Sensor
