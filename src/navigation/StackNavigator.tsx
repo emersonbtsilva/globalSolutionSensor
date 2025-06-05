@@ -9,14 +9,15 @@ import MitigationScreen from '../screens/mitigation/index';
 
 
 
-
 export type RootStackParamList = {
   Welcome: undefined;
   InsertData: undefined;
   ViewRisks: undefined;
   History: undefined;
   Mitigation: undefined;
+  Menu: undefined; 
 };
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

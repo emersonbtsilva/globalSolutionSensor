@@ -1,35 +1,38 @@
+// styles.ts ou styles.js (onde você definiu seus estilos)
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 32,
+    backgroundColor: '#eef',
+    paddingHorizontal: 24,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#dff6f0',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
+    color: '#333',
     marginBottom: 16,
-    textAlign: 'center',
-    color: '#004d40',
   },
   subtitle: {
     fontSize: 16,
-    marginBottom: 32,
+    color: '#555',
+    marginBottom: 24,
     textAlign: 'center',
-    color: '#333',
   },
   button: {
-    backgroundColor: '#00796b',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 8,
+    backgroundColor: '#4A90E2',
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    marginBottom: 12,
+    width: '100%',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '600',
+    textAlign: 'center',
   },
 });
