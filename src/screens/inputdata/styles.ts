@@ -59,4 +59,16 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
+  picker: {
+    height: 50,
+    width: '100%',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    color: '#333',
+    marginTop: 4,
+    elevation: 2, // sombra Android
+  },
 });

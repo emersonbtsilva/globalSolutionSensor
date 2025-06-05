@@ -12,7 +12,10 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'src/navigation/StackNavigator';
 import { styles } from './styles';
+import { Picker } from '@react-native-picker/picker';
 
+
+const tiposSolo = ['Argiloso', 'Arenoso', 'Humoso', 'Calcário', 'Siltoso'];
 type InsertDataScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'InsertData'
@@ -30,6 +33,7 @@ export default function InsertDataScreen() {
   const [erroUmidade, setErroUmidade] = useState(false);
   const [erroInclinacao, setErroInclinacao] = useState(false);
   const [erroTipoSolo, setErroTipoSolo] = useState(false);
+  
 
   const validarCampos = (): boolean => {
     const chuvaValida = !isNaN(Number(chuva)) && Number(chuva) >= 0;
@@ -132,22 +136,25 @@ export default function InsertDataScreen() {
       </View>
 
       {/* TIPO DE SOLO */}
-      <View style={styles.formGroup}>
-        <Text style={styles.label}>Tipo de Solo</Text>
-        <TextInput
-          style={styles.input}
-          value={tipoSolo}
-          onChangeText={(text) => {
-            setTipoSolo(text);
-            setErroTipoSolo(false);
-          }}
-          placeholder="Ex: Argiloso"
-        />
-        {erroTipoSolo && (
-          <Text style={styles.errorText}>Tipo inválido (somente letras)</Text>
-        )}
-      </View>
-
+        <View style={[styles.formGroup, { minHeight: 70 }]}>
+          <Text style={styles.label}>Tipo de Solo</Text>
+          <Picker
+            selectedValue={tipoSolo}
+            onValueChange={(itemValue) => {
+              setTipoSolo(itemValue);
+              setErroTipoSolo(false);
+            }}
+            style={styles.picker}
+          >
+            <Picker.Item label="Selecione o tipo de solo..." value="" />
+            {tiposSolo.map((tipo, index) => (
+              <Picker.Item key={index} label={tipo} value={tipo} />
+            ))}
+          </Picker>
+          {erroTipoSolo && (
+            <Text style={styles.errorText}>Selecione um tipo de solo válido</Text>
+          )}
+        </View>
       {/* BOTÃO */}
       <TouchableOpacity style={styles.button} onPress={salvarDados}>
         <Text style={styles.buttonText}>Salvar Dados</Text>
