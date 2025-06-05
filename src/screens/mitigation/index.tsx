@@ -1,7 +1,7 @@
-// src/screens/MitigationScreen.tsx
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Button } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
+import { styles, getRiskColor } from './styles';
 
 type RootStackParamList = {
   Mitigation: { risco: 'Alto' | 'Moderado' | 'Baixo' };
@@ -10,7 +10,6 @@ type RootStackParamList = {
 export default function MitigationScreen() {
   const route = useRoute<RouteProp<RootStackParamList, 'Mitigation'>>();
   const riscoInicial = route.params?.risco ?? 'Baixo';
-
   const [risco, setRisco] = useState<'Alto' | 'Moderado' | 'Baixo' | null>(riscoInicial);
 
   const getAcoesMitigacao = () => {
@@ -47,12 +46,7 @@ export default function MitigationScreen() {
 
       <Text style={styles.riskLevel}>
         Risco Atual:{' '}
-        <Text
-          style={{
-            color: risco === 'Alto' ? 'red' : risco === 'Moderado' ? 'orange' : 'green',
-            fontWeight: 'bold',
-          }}
-        >
+        <Text style={{ color: getRiskColor(risco), fontWeight: 'bold' }}>
           {risco}
         </Text>
       </Text>
@@ -74,41 +68,3 @@ export default function MitigationScreen() {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    backgroundColor: '#eef',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center',
-  },
-  riskLevel: {
-    fontSize: 18,
-    marginBottom: 12,
-    textAlign: 'center',
-  },
-  actionsBox: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 24,
-    elevation: 2,
-  },
-  actionItem: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  subTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 12,
-  },
-  buttons: {
-    flexDirection: 'column',
-    gap: 8,
-  },
-});

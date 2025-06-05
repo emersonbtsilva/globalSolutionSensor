@@ -1,11 +1,11 @@
 // src/navigation/StackNavigator.tsx
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import WelcomeScreen from '../screens/WelcomeScreen';
-import InsertDataScreen from '../screens/InsertDataScreen';
-import ViewRisksScreen from '../screens/ViewRisksScreen';
-import HistoryScreen from '../screens/HistoryScreen';
-import MitigationScreen from '../screens/MitigationScreen';
+import WelcomeScreen from '../screens/welcome/index';
+import InsertDataScreen from '../screens/inputdata/index';
+import ViewRisksScreen from '../screens/risks/index';
+import HistoryScreen from '../screens/historyscreen/index';
+import MitigationScreen from '../screens/mitigation/index';
 
 
 

@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
   Alert,
   TouchableOpacity,
   ScrollView,
@@ -11,7 +10,8 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/StackNavigator';
+import { RootStackParamList } from 'src/navigation/StackNavigator';
+import { styles } from './styles';
 
 type InsertDataScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -79,22 +79,6 @@ export default function InsertDataScreen() {
     }
   };
 
-  // const handleLimparHistorico = () =>
-  //   Alert.alert('Confirmação', 'Tem certeza que deseja limpar o histórico?', [
-  //     { text: 'Cancelar', style: 'cancel' },
-  //     { text: 'Sim', onPress: resetarHistorico },
-  //   ]);
-
-  // const resetarHistorico = async () => {
-  //   try {
-  //     await AsyncStorage.removeItem('historicoDadosAmbientais');
-  //     Alert.alert('Sucesso', 'Histórico limpo com sucesso!');
-  //   } catch (error) {
-  //     Alert.alert('Erro', 'Falha ao limpar histórico.');
-  //     console.error(error);
-  //   }
-  // };
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Inserir Dados Ambientais</Text>
@@ -147,7 +131,7 @@ export default function InsertDataScreen() {
         {erroInclinacao && <Text style={styles.errorText}>Valor inválido</Text>}
       </View>
 
-      {/*TIPO SOLO*/}
+      {/* TIPO DE SOLO */}
       <View style={styles.formGroup}>
         <Text style={styles.label}>Tipo de Solo</Text>
         <TextInput
@@ -159,74 +143,15 @@ export default function InsertDataScreen() {
           }}
           placeholder="Ex: Argiloso"
         />
-        {erroTipoSolo && <Text style={styles.errorText}>Tipo inválido (somente letras)</Text>}
+        {erroTipoSolo && (
+          <Text style={styles.errorText}>Tipo inválido (somente letras)</Text>
+        )}
       </View>
 
-      {/* BOTÕES */}
+      {/* BOTÃO */}
       <TouchableOpacity style={styles.button} onPress={salvarDados}>
         <Text style={styles.buttonText}>Salvar Dados</Text>
       </TouchableOpacity>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 24,
-    backgroundColor: '#eef2f5',
-    flexGrow: 1,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 24,
-    textAlign: 'center',
-    color: '#1e1e1e',
-  },
-  formGroup: {
-    marginBottom: 16,
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 6,
-    color: '#333',
-  },
-  input: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-  },
-  errorText: {
-    color: '#d9534f',
-    fontSize: 13,
-    marginTop: 4,
-  },
-  button: {
-    backgroundColor: '#4CAF50',
-    padding: 14,
-    borderRadius: 8,
-    marginTop: 10,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  clearButton: {
-    backgroundColor: '#d9534f',
-    padding: 14,
-    borderRadius: 8,
-    marginTop: 16,
-    alignItems: 'center',
-  },
-  clearButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-});
