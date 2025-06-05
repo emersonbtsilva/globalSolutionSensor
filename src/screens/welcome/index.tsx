@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RootStackParamList } from '../../navigation/StackNavigator';
@@ -63,6 +64,13 @@ export default function WelcomeScreen({ navigation }: Props) {
       console.error('Erro ao carregar dados recentes:', e);
     }
   };
+
+  useFocusEffect(
+  useCallback(() => {
+      buscarClima();
+      carregarDados();
+    }, [])
+  );
 
   const handleNavigate = (screen: keyof RootStackParamList) => {
     setMenuVisible(false);
